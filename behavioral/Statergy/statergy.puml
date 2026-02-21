@@ -1,0 +1,46 @@
+@startuml
+class Order {
+~ Notification notification
++ void setNotification(Notification)
+}
+
+
+interface FXRateStrategy {
+~ float getFXRate()
+}
+
+interface Notification {
++ void sendNotification()
+}
+
+class SMSNotification {
++ void sendNotification()
+}
+
+class EmailNotification {
++ void sendNotification()
+}
+
+class Main {
++ {static} void main(String[])
+}
+
+class AgentRate {
++ float getFXRate()
+}
+
+class FxResolver {
++ {static} FXRateStrategy resolve(String)
+}
+
+class P2PRate {
++ float getFXRate()
+}
+
+
+
+Notification <|.. SMSNotification
+Notification <|.. EmailNotification
+FXRateStrategy <|.. AgentRate
+FXRateStrategy <|.. P2PRate
+@enduml

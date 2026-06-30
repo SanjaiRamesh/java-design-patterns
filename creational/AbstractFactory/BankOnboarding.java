@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class BankOnboarding {
     SavingAccount savingAccount;
     CreditCard creditCard;
@@ -16,8 +17,9 @@ public class BankOnboarding {
         BankOnboarding bankOnboarding;
         String confirm = "yes";
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Welcome to Bank Onboarding System");
         while("yes".equalsIgnoreCase(confirm)){
+            System.out.print("Enter the user type Premium or Retail:");
             user = scanner.nextLine();
             if(user.equalsIgnoreCase("Premium")){
                 bankOnboarding = new BankOnboarding(new PremiumFactory());
